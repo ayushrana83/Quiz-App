@@ -28,7 +28,7 @@ const QuizPage: React.FC = () => {
         // Fix the URL concatenation
         const response = await Axios.get(`/question/single/${title}`);
         setQuestions(response.data.questions);
-        console.log(response);
+        // console.log(response);
         // Initialize selectedOptions array based on loaded questions length
         setSelectedOptions(Array(response.data.length).fill(null));
         setLoading(false);

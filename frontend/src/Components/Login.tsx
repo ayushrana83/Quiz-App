@@ -13,10 +13,10 @@ export default function Login() {
     e.preventDefault();
     try {
       const response  = await Axios.post("/user/login" , {email , password});
-      console.log(response);
-      if(response.statusText === 'OK')
+      // console.log(response);
+      if(response.status === 200)
       {
-        console.log(email , password);
+        // console.log(email , password);
         loginUser(email , password);
         navigate("/");
         toast.success("login successfull");

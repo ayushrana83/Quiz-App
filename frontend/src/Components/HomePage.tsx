@@ -9,7 +9,7 @@ export function HomePage() {
   const { category, setCategory } = useCategory();
 
   useEffect(() => {
-    console.log(category);
+    // console.log(category);
     if (!category || category.length === 0 || category === undefined) {
       const getQuiz = async () => {
         try {

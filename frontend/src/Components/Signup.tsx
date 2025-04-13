@@ -15,11 +15,11 @@ export default function Signup() {
       e.preventDefault();
       try {
         const response  = await Axios.post("/user/signup" , {email , firstName , lastName , password});
-        console.log(response);
-        if(response.statusText === 'OK')
+        // console.log(response);
+        if(response.status === 200)
         {
           toast.success("signup successfull")
-          console.log(email , password , firstName + " " + lastName);
+          // console.log(email , password , firstName + " " + lastName);
           signinUser(email ,firstName + " " + lastName , password);
           navigate("/");
         }
