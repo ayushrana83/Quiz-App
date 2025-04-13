@@ -14,10 +14,10 @@ app.use(cors());
 app.use("/back/user" , userRouter);
 app.use("/back/dashboard" , DashboardRouter);
 app.use("/back/question" , QuestionRouter);
-app.use(express.static(path.join(_dirname , "/frontend")))
+app.use(express.static(path.join(_dirname , "/frontend/dist")))
 
 app.use("*" , (_, res) => {
-    res.sendFile(path.resolve(_dirname , "frontend" , "index.html"));
+    res.sendFile(path.resolve(_dirname , "frontend" ,"dist", "index.html"));
 })
 
 

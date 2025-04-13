@@ -4,7 +4,10 @@ import prisma from "../DB/db.config";
 export const getAllScores = async (req: Request, res: Response) => {
   try {
     const scores = await prisma.leaderBoard.findMany();
-    res.status(200).json({ scores });
+    console.log("score = " , scores);
+    const newScore = scores.slice(0,15);
+    console.log("new scoree ==" , newScore);
+    res.status(200).json({ newScore });
     return;
   } catch (error) {
     console.log("Error in getAllScores ", error);

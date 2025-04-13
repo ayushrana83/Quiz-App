@@ -26,7 +26,8 @@ const Leaderboard: React.FC = () => {
       try {
         const response = await Axios.get("/dashboard/get");
         // Temporary data
-        console.log(response.data.scores);
+        // console.log("response" , response);
+        // console.log(response.data.newScore);
         const tempData: LeaderboardEntry[] = [
           { id: '1', email: 'john@example.com', score: 850, category: 'Expert' },
           { id: '2', email: 'sarah@example.com', score: 920, category: 'Master' },
@@ -38,7 +39,7 @@ const Leaderboard: React.FC = () => {
           { id: '8', email: 'olivia@example.com', score: 795, category: 'Advanced' },
         ];
         
-        setEntries(response.data.scores || tempData);
+        setEntries(response.data.newScore || tempData);
       } catch (error) {
         console.error('Error fetching leaderboard data:', error);
       } finally {

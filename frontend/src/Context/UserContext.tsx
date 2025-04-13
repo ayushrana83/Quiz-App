@@ -24,7 +24,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     const newUser = { email, password };
     setUser(newUser);
   };
-  const signinUser = (email: string, name : string, password: string) => {
+  const signinUser = (email: string,  password: string) => {
     const newUser = { email, password};
     setUser(newUser);
   };
