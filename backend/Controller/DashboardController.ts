@@ -3,8 +3,9 @@ import prisma from "../DB/db.config";
 
 export const getAllScores = async (req: Request, res: Response) => {
   try {
-    const scores = await prisma.leaderBoard.findMany();
+    const scores = (await prisma.leaderBoard.findMany());
     console.log("score = " , scores);
+    scores.sort((a ,b) => b.score - a.score);
     const newScore = scores.slice(0,15);
     console.log("new scoree ==" , newScore);
     res.status(200).json({ newScore });
