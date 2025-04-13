@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const Axios = axios.create({
-    baseURL : "http://localhost:4000/back"
+    baseURL : "https://quiz-app-backend-nine-indol.vercel.app/back"
 })
