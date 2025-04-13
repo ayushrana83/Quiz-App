@@ -12,7 +12,7 @@ interface Question {
 export const getQuestionCategoryWise =  async (req : Request , res : Response) => {
     try{
         const {id} = req.params;
-        console.log("id =" , id);
+        // console.log("id =" , id);
         const questions = await prisma.question.findMany({where : {category : id}});
         res.status(200).json({questions});
         return;
@@ -51,7 +51,7 @@ export const addQuestions = async (req: Request, res: Response) => {
 
 export const getCategoryAndDetails = async(req : Request , res : Response)=>{
     try {
-        console.log("sdfsdf");
+        // console.log("sdfsdf");
         const questions = await prisma.question.findMany();
         const category = new Map();
         questions.map((question : Question) => {
@@ -60,7 +60,7 @@ export const getCategoryAndDetails = async(req : Request , res : Response)=>{
             else
                 category.set(question.category , 1);
         })
-        console.log(category);
+        // console.log(category);
         res.status(200).json([...category]);
         return;
     } catch (error) {

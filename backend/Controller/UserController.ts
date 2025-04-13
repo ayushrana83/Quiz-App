@@ -13,7 +13,7 @@ export const signinUserController = async (req : Request, res : Response) => {
     try
     {
         const {email , password , firstName , lastName} : User = req.body;
-        console.log(email  , password , firstName , lastName);
+        // console.log(email  , password , firstName , lastName);
         if(!email || !password || !firstName || !lastName)
         {
             console.log("all fields required");
@@ -49,7 +49,7 @@ export const loginUserController = async(req : Request , res : Response) => {
     try {
         const {email , password} = req.body;
         console.log("login user");
-        console.log({email , password});
+        // console.log({email , password});
         if(!email || !password)
         {
             res.status(404).json({message : "all fields required"});
